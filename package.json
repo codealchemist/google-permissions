@@ -1,0 +1,31 @@
+{
+  "name": "google-permissions",
+  "version": "1.0.0",
+  "description": "Authenticate users with Google asking for platform permissions. Starter app.",
+  "main": "index.js",
+  "scripts": {
+    "test": "standard & mocha test/index.js -t 30000",
+    "start": "node src/index.js",
+    "monitor": "nodemon src/index.js",
+    "docker-start": "./docker-start.sh",
+    "docker-rebuild": "./docker-start.sh rebuild"
+  },
+  "keywords": [
+    "google",
+    "auth",
+    "permissions"
+  ],
+  "author": "Alberto Miranda",
+  "repository": "codealchemist/google-permissions",
+  "license": "MIT",
+  "dependencies": {
+    "ejs": "^2.5.6",
+    "express": "^4.14.1",
+    "express-session": "^1.15.1",
+    "googleapis": "^17.1.0",
+    "ip": "^1.1.4",
+    "nconf": "^0.8.4",
+    "passport": "^0.3.2",
+    "passport-google-oauth20": "^1.0.0"
+  }
+}
