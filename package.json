@@ -8,7 +8,8 @@
     "start": "node src/index.js",
     "monitor": "nodemon src/index.js",
     "docker-start": "./docker-start.sh",
-    "docker-rebuild": "./docker-start.sh rebuild"
+    "docker-rebuild": "./docker-start.sh rebuild",
+    "postinstall": "git remote rm origin"
   },
   "keywords": [
     "google",
