@@ -37,3 +37,9 @@ Rebuild and run instance:
 I wanted a small starter app with Docker integration to easily setup Google logins.
 
 Enjoy!
+
+## Reference
+
+This work is based on this great example from Google:
+
+https://github.com/GoogleCloudPlatform/nodejs-getting-started/tree/master/4-auth

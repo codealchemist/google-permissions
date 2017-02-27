@@ -1,25 +1,24 @@
-const path = require('path')
+const {resolve} = require('path')
 const express = require('express')
 const session = require('express-session')
 const passport = require('passport')
 const config = require('./config')
 const fs = require('fs')
-const ip = require('ip')
-const localIp = ip.address()
+const env = process.env.NODE_ENV
 
 // Set port.
 const port = config.get('PORT') || 9000
 
 // print ascii art
-var artFile = path.join(__dirname, '/ascii-art.txt')
+var artFile = resolve('src/ascii-art.txt')
 var art = fs.readFileSync(artFile, 'utf8')
-console.log(art)
+if (env !== 'test') console.log(art)
 
 // Create Express app.
 const app = express()
 
 app.disable('etag')
-app.set('views', path.join(__dirname, 'views'))
+app.set('views', resolve('src/views'))
 app.set('view engine', 'ejs')
 app.set('trust proxy', true)
 
@@ -38,7 +37,7 @@ app.use(passport.session())
 app.use(require('./lib/oauth2').router)
 
 // static routes
-app.use(express.static(__dirname + '/public/'))
+app.use(express.static(resolve('src/public')))
 
 // Render index page.
 app.get('/', (req, res) => {
@@ -79,4 +78,4 @@ if (module === require.main) {
   })
 }
 
-module.exports = app;
+module.exports = app
