@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "standard && mocha",
+    "test-focus": "standard-focus",
     "start": "node src/index.js",
     "monitor": "nodemon src/index.js",
     "docker-start": "./docker-start.sh",
@@ -32,6 +33,7 @@
     "proxyquire": "^1.7.11",
     "sinon": "^1.17.7",
     "standard": "^8.6.0",
+    "standard-focus": "^1.1.1",
     "supertest": "^3.0.0"
   },
   "standard": {
